@@ -599,7 +599,7 @@ class ProfileButtonsSection extends StatelessWidget {
             child: _buildButton(
               context,
               '종우에 대해\n알아보기',
-              () => _showProfile(context, '한종우', 'lib/assets/종우.jpg', {
+              () => _showProfile(context, '한종우', 'public/assets/jongwoo.jpg', {
                 '출생년도': '1998',
                 '고향': '서울',
                 'MBTI': 'ISTJ',
@@ -613,7 +613,7 @@ class ProfileButtonsSection extends StatelessWidget {
             child: _buildButton(
               context,
               '채은이에 대해\n알아보기',
-              () => _showProfile(context, '한채은', 'lib/assets/채은.jpg', {
+              () => _showProfile(context, '한채은', 'public/assets/chaeeun.jpg', {
                 '출생년도': '1998',
                 '고향': '서울',
                 'MBTI': 'ISFJ',
