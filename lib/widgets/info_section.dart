@@ -255,12 +255,12 @@ class LocationSection extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         SizedBox(
-          height: 400, // 원하는 높이로 조절
+          height: 400,
           child: NaverMapWeb(
             clientId: 's65fanh83m',
             initialLatitude: 37.570629,
             initialLongitude: 126.980532,
-            initialZoom: 10,
+            initialZoom: 5,
             places: [
               Place(
                 id: '1',
@@ -271,7 +271,7 @@ class LocationSection extends StatelessWidget {
               ),
             ],
             onMapReady: (NaverMap map) {
-              map.setZoom(10);
+              map.setZoom(5);
             },
           ),
         ),
