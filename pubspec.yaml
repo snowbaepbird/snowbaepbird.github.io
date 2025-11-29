@@ -1,0 +1,47 @@
+name: family_invitation
+description: "가족용 청첩장"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  supabase_flutter: ^2.9.1
+  url_launcher: ^6.3.2
+  add_2_calendar: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - public/assets/qrcode.png
+    - lib/assets/
+
+  fonts:
+    - family: NanumGothic
+      fonts:
+        - asset: public/assets/fonts/NanumGothic.ttf
+        - asset: public/assets/fonts/NanumGothicBold.ttf
+          weight: 700
+        - asset: public/assets/fonts/NanumGothicExtraBold.ttf
+          weight: 800
+        - asset: public/assets/fonts/NanumGothicLight.ttf
+          weight: 300
+    - family: MemomentKkukkukk
+      fonts:
+        - asset: public/assets/fonts/MemomentKkukkukk.ttf
+    - family: ChangwonDangamRound
+      fonts:
+        - asset: public/assets/fonts/ChangwonDangamRound.ttf
