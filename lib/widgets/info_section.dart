@@ -255,7 +255,7 @@ class LocationSection extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         SizedBox(
-          height: 400,
+          height: 200,
           child: NaverMapWeb(
             clientId: 's65fanh83m',
             initialLatitude: 37.570629,
@@ -286,6 +286,7 @@ class QnASection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final qnaList = [
+      (q: '어떻게 만나게 되었나요?', a: '소개팅으로 만나게 되었어요.'),
       (q: '어디서 살기로 했나요?', a: '채은이 직장이 있는 영종도에서 살기로 했어요.'),
       (q: '언제부터 같이 사나요?', a: '26년 2월 말부터 같이 살아요.'),
       (q: '결혼식은 왜 안 하나요?', a: '채은이가 하고 싶지 않아했고 종우가 존중해줬어요.'),
