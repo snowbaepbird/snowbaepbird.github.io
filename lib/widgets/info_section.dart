@@ -261,7 +261,7 @@ class LocationSection extends StatelessWidget {
             clientId: 's65fanh83m',
             initialLatitude: 37.570629,
             initialLongitude: 126.980532,
-            initialZoom: 15,
+            initialZoom: 14,
             places: [
               Place(
                 id: '1',
@@ -272,7 +272,7 @@ class LocationSection extends StatelessWidget {
               ),
             ],
             onMapReady: (NaverMap map) {
-              map.setZoom(17);
+              map.setZoom(14);
             },
           ),
         ),
