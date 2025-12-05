@@ -1,4 +1,5 @@
 import 'package:add_2_calendar/add_2_calendar.dart';
+import 'package:family_invitation/designs/theme.dart';
 import 'package:family_invitation/utils/calendar/calendar_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -278,12 +279,13 @@ class LocationSection extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton.icon(
+                style: mapButtonStyle,
                 icon: Image.asset(
                   'public/assets/navermap.png',
                   height: 24,
                   width: 24,
                 ),
-                label: const Text('네이버 맵'),
+                label: const Text('네이버맵'),
                 onPressed: () async {
                   const url = 'https://naver.me/5A3pmHDy';
                   if (!await launchUrl(Uri.parse(url))) {
@@ -295,12 +297,13 @@ class LocationSection extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: ElevatedButton.icon(
+                style: mapButtonStyle,
                 icon: Image.asset(
                   'public/assets/kakaomap.png',
                   height: 24,
                   width: 24,
                 ),
-                label: const Text('카카오 맵'),
+                label: const Text('카카오맵'),
                 onPressed: () async {
                   const url = 'https://place.map.kakao.com/967729291';
                   if (!await launchUrl(Uri.parse(url))) {
@@ -312,6 +315,7 @@ class LocationSection extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: ElevatedButton.icon(
+                style: mapButtonStyle,
                 icon: Image.asset(
                   'public/assets/tmap.png',
                   height: 24,

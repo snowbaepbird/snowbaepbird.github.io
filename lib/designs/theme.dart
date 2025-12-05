@@ -47,3 +47,11 @@ final ThemeData darkModeTheme = ThemeData(
     elevation: 0,
   ),
 );
+
+final ButtonStyle mapButtonStyle = ElevatedButton.styleFrom(
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+  backgroundColor: Colors.white,
+  foregroundColor: Colors.black,
+  elevation: 3,
+  side: const BorderSide(color: Color.fromARGB(255, 46, 142, 173), width: 1.5),
+);
