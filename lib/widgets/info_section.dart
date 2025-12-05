@@ -256,7 +256,7 @@ class LocationSection extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         SizedBox(
-          height: 200,
+          height: 250,
           child: NaverMapWeb(
             clientId: 's65fanh83m',
             initialLatitude: 37.570629,
@@ -305,6 +305,23 @@ class LocationSection extends StatelessWidget {
                 label: const Text('카카오 맵'),
                 onPressed: () async {
                   const url = 'https://place.map.kakao.com/967729291';
+                  if (!await launchUrl(Uri.parse(url))) {
+                    throw Exception('Could not launch $url');
+                  }
+                },
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: ElevatedButton.icon(
+                icon: Image.asset(
+                  'public/assets/tmap.png',
+                  height: 24,
+                  width: 24,
+                ),
+                label: const Text('티맵'),
+                onPressed: () async {
+                  const url = 'https://tmap.life/08568743';
                   if (!await launchUrl(Uri.parse(url))) {
                     throw Exception('Could not launch $url');
                   }
