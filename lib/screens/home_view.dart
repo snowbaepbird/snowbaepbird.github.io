@@ -16,28 +16,42 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   List<String> _imageAssets = [];
 
-  @override
-  void initState() {
-    super.initState();
-    _loadImages();
-  }
+  bool _didStartLoadingImages = false;
 
   @override
-  void dispose() {
-    super.dispose();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_didStartLoadingImages) {
+      return;
+    }
+    _didStartLoadingImages = true;
+    _loadImages();
   }
 
   Future<void> _loadImages() async {
     final manifestContent = await rootBundle.loadString('AssetManifest.json');
     final Map<String, dynamic> manifestMap = json.decode(manifestContent);
-    final imagePaths = manifestMap.keys
-        .where((String key) => key.startsWith('lib/assets/'))
-        .toList();
-    if (mounted) {
-      setState(() {
-        _imageAssets = imagePaths;
-      });
+    final imagePaths =
+        manifestMap.keys
+            .where((String key) => key.startsWith('lib/assets/'))
+            .toList()
+          ..sort();
+    if (!mounted) {
+      return;
     }
+
+    await Future.wait(
+      imagePaths.map(
+        (String imagePath) => precacheImage(AssetImage(imagePath), context),
+      ),
+    );
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _imageAssets = imagePaths;
+    });
   }
 
   @override
@@ -73,6 +87,26 @@ class _HomeViewState extends State<HomeView> {
                     children: <Widget>[
                       AnimatedSwitcher(
                         duration: const Duration(milliseconds: 600),
+                        layoutBuilder:
+                            (
+                              Widget? currentChild,
+                              List<Widget> previousChildren,
+                            ) {
+                              return Stack(
+                                fit: StackFit.expand,
+                                children: <Widget>[
+                                  ...previousChildren,
+                                  if (currentChild != null) currentChild,
+                                ],
+                              );
+                            },
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
                         child: Image.asset(
                           _imageAssets[widget.heroIndex % _imageAssets.length],
                           key: ValueKey<int>(widget.heroIndex),

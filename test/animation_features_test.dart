@@ -19,6 +19,10 @@ void main() {
   test('home hero image keeps the previous frame during asset switches', () {
     final source = File('lib/screens/home_view.dart').readAsStringSync();
 
+    expect(source, contains('precacheImage'));
+    expect(source, contains('Future.wait'));
+    expect(source, contains('layoutBuilder'));
+    expect(source, contains('previousChildren'));
     expect(source, contains('gaplessPlayback: true'));
   });
 
