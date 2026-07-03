@@ -305,7 +305,7 @@ class _BoardingPassScreenState extends State<BoardingPassScreen> {
                                             CrossAxisAlignment.start,
                                         children: makeElementText(
                                           "DATE",
-                                          "01/10",
+                                          "07/04",
                                           16,
                                         ),
                                       ),

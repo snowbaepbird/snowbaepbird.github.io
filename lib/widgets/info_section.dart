@@ -53,7 +53,7 @@ class CalendarSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         const Text(
-          '26년 1월 10일 토요일 낮 12시',
+          '26년 7월 4일 토요일 오전 11시',
           style: TextStyle(
             fontFamily: 'MemomentKkukkukk',
             fontSize: 22,
@@ -101,14 +101,14 @@ class CalendarSection extends StatelessWidget {
   }
 
   Widget _buildCalendarGrid() {
-    // January 2026
-    // 1st is Thursday
+    // July 2026
+    // 1st is Wednesday
     final days = [
-      ['', '', '', '', '1', '2', '3'],
-      ['4', '5', '6', '7', '8', '9', '10'],
-      ['11', '12', '13', '14', '15', '16', '17'],
-      ['18', '19', '20', '21', '22', '23', '24'],
-      ['25', '26', '27', '28', '29', '30', '31'],
+      ['', '', '', '1', '2', '3', '4'],
+      ['5', '6', '7', '8', '9', '10', '11'],
+      ['12', '13', '14', '15', '16', '17', '18'],
+      ['19', '20', '21', '22', '23', '24', '25'],
+      ['26', '27', '28', '29', '30', '31', ''],
     ];
 
     return Column(
@@ -120,7 +120,7 @@ class CalendarSection extends StatelessWidget {
             children: week.asMap().entries.map((entry) {
               final int idx = entry.key;
               final String day = entry.value;
-              final bool isTarget = day == '10';
+              final bool isTarget = day == '4';
               final bool isSunday = idx == 0;
 
               if (day.isEmpty) return const SizedBox(width: 30);
@@ -186,7 +186,7 @@ class LocationSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         const Text(
-          '일품진진수라 광화문점',
+          '쿠우쿠우 골드 구로점',
           style: TextStyle(
             fontFamily: 'MemomentKkukkukk',
             fontSize: 22,
@@ -195,7 +195,7 @@ class LocationSection extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         const Text(
-          '서울 종로구 종로5길 7 Tower 8 지하 2층',
+          '서울특별시 구로구 고척동 76-41 3동 7층',
           style: TextStyle(fontSize: 14, color: Color(0xFF757575)),
         ),
         const SizedBox(height: 32),
@@ -203,16 +203,16 @@ class LocationSection extends StatelessWidget {
           height: 250,
           child: NaverMapWeb(
             clientId: 's65fanh83m',
-            initialLatitude: 37.570629,
-            initialLongitude: 126.980532,
+            initialLatitude: 37.4980725,
+            initialLongitude: 126.8626774,
             initialZoom: 14,
             places: [
               Place(
                 id: '1',
-                name: '일품진진수라 광화문점',
-                latitude: 37.570629,
-                longitude: 126.980532,
-                description: '일품진진수라 광화문점',
+                name: '쿠우쿠우 골드 구로점',
+                latitude: 37.4980725,
+                longitude: 126.8626774,
+                description: '쿠우쿠우 골드 구로점',
               ),
             ],
           ),
@@ -230,7 +230,7 @@ class LocationSection extends StatelessWidget {
                 ),
                 label: const Text('네이버맵'),
                 onPressed: () async {
-                  const url = 'https://naver.me/5A3pmHDy';
+                  const url = 'https://naver.me/GkR3ziKH';
                   if (!await launchUrl(Uri.parse(url))) {
                     throw Exception('Could not launch $url');
                   }
@@ -248,7 +248,7 @@ class LocationSection extends StatelessWidget {
                 ),
                 label: const Text('카카오맵'),
                 onPressed: () async {
-                  const url = 'https://place.map.kakao.com/967729291';
+                  const url = 'https://place.map.kakao.com/1553595588';
                   if (!await launchUrl(Uri.parse(url))) {
                     throw Exception('Could not launch $url');
                   }
@@ -266,7 +266,7 @@ class LocationSection extends StatelessWidget {
                 ),
                 label: const Text('티맵'),
                 onPressed: () async {
-                  const url = 'https://tmap.life/08568743';
+                  const url = 'https://tmap.life/e244a4c3';
                   if (!await launchUrl(Uri.parse(url))) {
                     throw Exception('Could not launch $url');
                   }
@@ -288,8 +288,7 @@ class QnASection extends StatelessWidget {
     final qnaList = [
       (q: '둘은 언제 어떻게 처음 만나게 되었나요?', a: '24년 여름에 소개팅으로 처음 만났어요.'),
       (q: '결혼식은 왜 안 하나요?', a: '채은이가 하고 싶지 않아했고 종우가 존중해줬어요.'),
-      (q: '언제부터 어디에서 살기로 했나요?', a: '26년 2월 말부터 영종도에서 살기로 했어요.'),
-      (q: '웨딩 사진은 찍나요?', a: '신혼여행 가서 스냅 사진을 찍을 계획이에요.'),
+      (q: '신혼집은 어디인가요?', a: '26년 2월 말부터 영종도에서 살고 있어요.'),
       (q: '신혼여행은 언제 어디로 가나요?', a: '26년 9월 말에 캐나다로 갈거예요.'),
     ];
 
