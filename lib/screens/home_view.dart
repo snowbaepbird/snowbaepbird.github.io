@@ -77,6 +77,7 @@ class _HomeViewState extends State<HomeView> {
                           _imageAssets[widget.heroIndex % _imageAssets.length],
                           key: ValueKey<int>(widget.heroIndex),
                           fit: BoxFit.cover,
+                          gaplessPlayback: true,
                         ),
                       ),
                       const PetalLayer(),
